@@ -1,0 +1,6 @@
+C:\Afshinm\Source\CodePi\ConsoleApp\Verify\bin\Debug\Verify.exe.config
+C:\Afshinm\Source\CodePi\ConsoleApp\Verify\bin\Debug\Verify.exe
+C:\Afshinm\Source\CodePi\ConsoleApp\Verify\bin\Debug\Verify.pdb
+C:\Afshinm\Source\CodePi\ConsoleApp\Verify\obj\Debug\Verify.csprojResolveAssemblyReference.cache
+C:\Afshinm\Source\CodePi\ConsoleApp\Verify\obj\Debug\Verify.exe
+C:\Afshinm\Source\CodePi\ConsoleApp\Verify\obj\Debug\Verify.pdb

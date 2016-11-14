@@ -135,6 +135,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\scania-logo.png" />
+    <Content Include="parameters.xml" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -238,6 +239,13 @@
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>
-  <Target Name="AfterBuild">
-  </Target> -->
+  -->
+  <Target Name="AfterBuild" Condition="'$(IsTFSBuild)' != ''">
+    <Message Text="'Message After Build: TFSBuild Status $(IsTFSBuild) - $(OutDir)\_PublishedWebsites\$(TargetName) '" />
+    <TransformXml Condition="Exists('$(OutDir)\_PublishedWebsites\$(TargetName)')" Source="Web.config" Transform="Web.Dev.config" Destination="$(OutDir)\_PublishedWebsites\$(TargetName).Web.Dev.config" />
+    <TransformXml Condition="Exists('$(OutDir)\_PublishedWebsites\$(TargetName)')" Source="Web.config" Transform="Web.Production.config" Destination="$(OutDir)\_PublishedWebsites\$(TargetName).Web.Production.config" />
+    <TransformXml Condition="Exists('$(OutDir)\_PublishedWebsites\$(TargetName)')" Source="Web.config" Transform="Web.Preprod.config" Destination="$(OutDir)\_PublishedWebsites\$(TargetName).Web.Preprod.config" />
+    <TransformXml Condition="Exists('$(OutDir)\_PublishedWebsites\$(TargetName)')" Source="Web.config" Transform="Web.Edu.config" Destination="$(OutDir)\_PublishedWebsites\$(TargetName).Web.Edu.config" />
+    <TransformXml Condition="Exists('$(OutDir)\_PublishedWebsites\$(TargetName)')" Source="Web.config" Transform="Web.Test.config" Destination="$(OutDir)\_PublishedWebsites\$(TargetName).Web.Test.config" />
+  </Target>
 </Project>
